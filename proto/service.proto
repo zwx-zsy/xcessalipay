@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+service AliPayService {
+  // Sends a greeting
+  //APP支付
+  rpc TradeAppPay(AliPayRequest) returns (AliPayResponse) {}
+  //PC页面支付
+  rpc TradePagePay(AliPayRequest) returns (AliPageResponse) {}
+  //手机页面支付
+  rpc TradeWapPay(AliPayRequest) returns (AliPageResponse) {}
+  //退款
+  rpc TradeRefund(AliRefundRequest) returns (AliRefoundResponse) {}
+  rpc FundTransToAccountTransfer(AliPayRequest) returns (AliPayFundTransToAccountTransferResponse) {}
+}
+
+
+message AliPayRequest {
+    string mid =1 ;
+    map<string, string> data = 3;
+}
+message AliRefundRequest {
+    string refundAmount = 1;
+    string outTradeNo = 2;
+}
+message AliPayResponse {
+    int64 codes = 1;
+    string message = 2;
+    map<string, string> data = 3;
+}
+
+message AliPageResponse{
+    string payurl = 1;
+}
+
+message AliRefoundResponse{
+    string sign =14;
+    string code =1;
+    string msg =2;
+    string subCode =3;
+    string subMsg =4;
+    string tradeNo =5;
+    string outTradeNo =6;
+    string buyerLogonId =7;
+    string buyerUserId =8;
+    string fundChange = 9;
+    string refundFee  =10;
+    string gmtRefundPay =11;
+    string storeName =12;
+    map<string,RefundDetailItem> refundDetailItemList =13;
+}
+
+message AliPayFundTransToAccountTransferResponse{
+    string sign = 8;
+    string code =1;
+    string msg =2;
+    string sub_code=3;
+    string sub_msg=4;
+    string out_biz_no=5; // 商户转账唯一订单号：发起转账来源方定义的转账单据号。请求时对应的参数，原样返回
+    string order_id=6;   // 支付宝转账单据号，成功一定返回，失败可能不返回也可能返回
+    string pay_date=7;   // 支付时间：格式为yyyy-MM-dd HH:mm:ss，仅转账成功返回
+}
+
+message RefundDetailItem {
+	string fundChannel = 1;
+    string amount = 2;
+	string realAmount= 3;
+}
