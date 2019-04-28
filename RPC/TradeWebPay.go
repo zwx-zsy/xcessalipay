@@ -1,4 +1,4 @@
-package API
+package RPC
 
 import (
 	"XcessAlipay/Config"
@@ -7,7 +7,7 @@ import (
 	"github.com/smartwalle/alipay"
 )
 
-func (s *Myserver) TradePagePay(c context.Context, in *service.AliPayRequest) (result *service.AliPageResponse,err error) {
+func (s *Myserver) TradePagePay(c context.Context, in *service.AliPayRequest) (result *service.AliPageResponse, err error) {
 	result = &service.AliPageResponse{}
 	var p = alipay.AliPayTradePagePay{}
 	p.NotifyURL = in.Data["NotifyURL"]
@@ -19,8 +19,8 @@ func (s *Myserver) TradePagePay(c context.Context, in *service.AliPayRequest) (r
 	p.ProductCode = in.Data["ProductCode"]
 	urls, err := Config.Client.TradePagePay(p)
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
 	result.Payurl = urls.String()
-	return result,nil
+	return result, nil
 }

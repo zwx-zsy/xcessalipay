@@ -1,4 +1,4 @@
-package API
+package RPC
 
 import (
 	"XcessAlipay/Config"
@@ -10,14 +10,13 @@ import (
 )
 
 type Myserver struct {
-
 }
 
 type Result struct {
-	AppId string `json:"app_id"`
-	Timestamp string `json:"timestamp"`
+	AppId       string                 `json:"app_id"`
+	Timestamp   string                 `json:"timestamp"`
 	Biz_content map[string]interface{} `json:"biz_content"`
-	Sign string `json:"sign"`
+	Sign        string                 `json:"sign"`
 }
 
 func (s *Myserver) TradeAppPay(ctx context.Context, in *service.AliPayRequest) (resp *service.AliPayResponse, err error) {
@@ -37,8 +36,8 @@ func (s *Myserver) TradeAppPay(ctx context.Context, in *service.AliPayRequest) (
 	resp.Data["app_id"] = res.Get("app_id")
 	resp.Data["method"] = res.Get("method")
 	resp.Data["timestamp"] = res.Get("timestamp")
-	resp.Data["biz_content"] =res.Get("biz_content")
-	resp.Data["sign"] =res.Get("sign")
+	resp.Data["biz_content"] = res.Get("biz_content")
+	resp.Data["sign"] = res.Get("sign")
 
 	rs := &Result{}
 	rs.AppId = res.Get("app_id")

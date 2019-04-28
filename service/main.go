@@ -3,8 +3,8 @@ package main
 // main.go
 
 import (
-	"XcessAlipay/API"
 	"XcessAlipay/Config"
+	"XcessAlipay/RPC"
 	"XcessAlipay/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -12,14 +12,13 @@ import (
 	"net"
 )
 
-
 func main() {
 	lis, err := net.Listen("tcp", ":"+Config.ServerConf.Server.Port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err.Error())
 	}
 	s := grpc.NewServer()
-	service.RegisterAliPayServiceServer(s, &API.Myserver{})
+	service.RegisterAliPayServiceServer(s, &RPC.Myserver{})
 	// Register reflection service on gRPC server.
 	reflection.Register(s)
 	if err := s.Serve(lis); err != nil {

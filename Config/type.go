@@ -7,12 +7,19 @@ type Server struct {
 
 //start
 type Yaml struct {
-	ConfigKey string  `yaml:"ConfigKey"`
-	DBConf    MongoDB `yaml:"mongodb"`
-	RedisConn string  `yaml:"redisConn"`
-	Server    Server  `yaml:"Server"`
+	ConfigKey  string     `yaml:"ConfigKey"`
+	DBConf     MongoDB    `yaml:"mongodb"`
+	RedisConn  string     `yaml:"redisConn"`
+	Server     Server     `yaml:"Server"`
+	AliPayConf AliPayConf `yaml:"AliPayConf"`
 }
 
+type AliPayConf struct {
+	APPID        string `yaml:"APPID"`
+	ALIPUBLICKEY string `yaml:"ALIPUBLICKEY"`
+	PRIVATEKEY   string `yaml:"PRIVATEKEY"`
+	IsPruduction bool   `yaml:"IsPruduction"`
+}
 
 type MongoDB struct {
 	User         string `yaml:"db_user"`

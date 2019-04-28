@@ -1,4 +1,4 @@
-package API
+package RPC
 
 import (
 	"XcessAlipay/Config"
@@ -7,9 +7,8 @@ import (
 	"github.com/smartwalle/alipay"
 )
 
-
 //手机页面支付接口
-func (s *Myserver)TradeWapPay(ctx context.Context, in *service.AliPayRequest) (resp *service.AliPageResponse,err error) {
+func (s *Myserver) TradeWapPay(ctx context.Context, in *service.AliPayRequest) (resp *service.AliPageResponse, err error) {
 	resp = &service.AliPageResponse{}
 	var p = alipay.AliPayTradeWapPay{}
 	p.NotifyURL = in.Data["NotifyURL"]
