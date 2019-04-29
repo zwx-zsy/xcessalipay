@@ -8,7 +8,7 @@ import (
 )
 
 // 此处应与服务器端对应
-const address = "http://xcesspaysvc:28888"
+const address = "xcesspaysvc:28888"
 
 /**
   1. 创建groc连接器
