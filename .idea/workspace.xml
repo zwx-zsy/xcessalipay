@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bbfc385-e855-4da6-8e2d-eee2c298f718" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/xcessalipay.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xcessalipay.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/xcessalipay.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xcessalipay.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="270">
+              <caret line="15" column="75" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -365,7 +365,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="formart proto" />
-    <option name="LAST_COMMIT_MESSAGE" value="formart proto" />
+    <MESSAGE value="add yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="add yaml" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/proto/alipay.pb.go" />
@@ -606,8 +607,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xcessalipay.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="270">
+          <caret line="15" column="75" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
         </state>
       </provider>
     </entry>
