@@ -79,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/client/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+              <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding>
                 <element signature="e#14#92#0" expanded="true" />
               </folding>
@@ -345,7 +345,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5008696" side_tool="true" weight="0.257371" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983682" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49815726" visible="true" weight="0.32983682" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49815726" weight="0.32983682" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -630,7 +630,7 @@
     <entry file="file://$PROJECT_DIR$/client/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding>
             <element signature="e#14#92#0" expanded="true" />
           </folding>
