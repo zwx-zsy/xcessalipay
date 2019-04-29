@@ -29,7 +29,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: xcesspay
+  name: xcesspaysvc
 spec:
   selector:
     app: xcesspay
