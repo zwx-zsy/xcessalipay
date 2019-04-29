@@ -5,4 +5,4 @@ RUN mkdir /etc/xcesspay
 COPY configuration /etc/xcesspay
 COPY . .
 EXPOSE 28888
-ENTRYPOINT ["/bin/bash","./service/main"]
+#ENTRYPOINT ["/bin/bash","/var/local/XcessAlipay/service/main"]
