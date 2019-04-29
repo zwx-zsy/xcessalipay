@@ -1,0 +1,41 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: xcesspay
+spec:
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: xcesspay
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: xcesspay
+          image: "registry.cn-shanghai.aliyuncs.com/vincent-k8s/xcessapy:v1.0.1"
+          ports:
+            - name: http
+              containerPort: 8081
+          volumeMounts:
+            - name: host-time
+              mountPath: /etc/localtime
+      volumes:
+        - name: host-time
+          hostPath:
+            path: /etc/localtime
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: xcesspay
+spec:
+  selector:
+    app: xcesspay
+    tier: backend
+  ports:
+    - port: 28888
+      name: http
+      protocol: TCP
+      targetPort: 28888
