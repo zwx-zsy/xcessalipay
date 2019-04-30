@@ -1,4 +1,4 @@
-FROM Alpine
+FROM alpine
 MAINTAINER "vincent321x@gmail.com"
 WORKDIR /var/local/XcessAlipay
 RUN mkdir /etc/xcesspay
