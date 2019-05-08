@@ -8,8 +8,10 @@ import (
 )
 
 // 此处应与服务器端对应
-const address = "xcesspaysvc:28888"
+//const address = "xcesspaysvc:28888"
+const address = "0.0.0.0:28888"
 
+//
 /**
   1. 创建groc连接器
   2. 创建grpc客户端,并将连接器赋值给客户端
@@ -34,7 +36,6 @@ func main() {
 	// 创建一个grpc连接器
 	conn, err := grpc.Dial(address, grpc.WithInsecure())
 	if err != nil {
-		fmt.Println("asdsa")
 		fmt.Println(err)
 	}
 	// 当请求完毕后记得关闭连接,否则大量连接会占用资源
@@ -51,16 +52,27 @@ func main() {
 		"ReturnURL":   "http://liveadmin.cczhou.cn:32080",
 		"Body":        "skdyhfiuwehif",
 		"Subject":     "测试支付系统-支付宝",
-		"OutTradeNo":  "ueoiruwo7981789231",
-		"TotalAmount": "1000.00",
+		"OutTradeNo":  "1293798127398123",
+		"TotalAmount": "0.01",
 		"ProductCode": "FAST_INSTANT_TRADE_PAY",
 	}})
-	response, err := c.TradeRefund(context.Background(), &pb.AliRefundRequest{OutTradeNo: "ueoiruwo7981789231", RefundAmount: "1000.00"})
-	if err != nil {
-		fmt.Println("shdjkfsd", response)
-	}
-	fmt.Println(response)
 	fmt.Println(result)
+	//APP 支付
+	//payResponse, err := c.TradeAppPay(context.Background(), &pb.AliPayRequest{Mid: "hsjkdhfksjdfsadf", Data: map[string]string{
+	//	"NotifyURL":   "http://203.86.24.181:3000/alipay",
+	//	"ReturnURL":   "http://liveadmin.cczhou.cn:32080",
+	//	"Body":        "skdyhfiuwehif",
+	//	"Subject":     "测试支付系统-支付宝",
+	//	"OutTradeNo":  "sa1asd1asfasd",
+	//	"TotalAmount": "1.00",
+	//	"ProductCode": "sdofhuoidqwe",
+	//}})
+	//fmt.Println(payResponse.Data["biz_content"])
+	//response, err := c.TradeRefund(context.Background(), &pb.AliRefundRequest{OutTradeNo: "ueoiruwo7981789231", RefundAmount: "1000.00"})
+	//if err != nil {
+	//	fmt.Println("shdjkfsd", response)
+	//}
+	//fmt.Println(response)
 	//result, err := c.TradeApp(context.Background(), &pb.AliRequest{Name: "shdjkfsd"})
 	if err != nil {
 		fmt.Println(err.Error())
@@ -68,12 +80,12 @@ func main() {
 		return
 	}
 
-	refoundResponse, err := c.FundTransToAccountTransfer(context.Background(), &pb.AliPayRequest{Data: map[string]string{"OutBizNo": "shgfhdksfasd", "PayeeAccount": "lsvhnj7045@sandbox.com", "Amount": "1.00"}})
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		fmt.Println(refoundResponse)
-	}
+	//refoundResponse, err := c.FundTransToAccountTransfer(context.Background(), &pb.AliPayRequest{Data: map[string]string{"OutBizNo": "shgfhdksfasd", "PayeeAccount": "lsvhnj7045@sandbox.com", "Amount": "1.00"}})
+	//if err != nil {
+	//	fmt.Println(err.Error())
+	//} else {
+	//	fmt.Println(refoundResponse)
+	//}
 	// 获取服务端返回的结果
 	//fmt.Println(result.Data["sign"])
 	//fmt.Println(result.Data["method"])

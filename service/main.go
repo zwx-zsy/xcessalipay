@@ -3,17 +3,18 @@ package main
 // main.go
 
 import (
-	"XcessAlipay/Config"
 	"XcessAlipay/RPC"
-	"XcessAlipay/proto"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
+	service "XcessAlipay/proto"
 	"log"
 	"net"
+
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {
-	lis, err := net.Listen("tcp", ":"+Config.ServerConf.Server.Port)
+	// lis, err := net.Listen("tcp", ":"+Config.ServerConf.Server.Port)
+	lis, err := net.Listen("tcp", ":28888")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err.Error())
 	}
