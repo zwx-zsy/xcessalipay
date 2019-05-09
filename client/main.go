@@ -47,27 +47,28 @@ func main() {
 	//name := &[]pb.AliPayData{}
 
 	// 客户端向grpc服务端发起请求
-	result, err := c.TradePagePay(context.Background(), &pb.AliPayRequest{Mid: "hdkjhsjkf", Data: map[string]string{
-		"NotifyURL":   "http://203.86.24.181:3000/alipay",
-		"ReturnURL":   "http://liveadmin.cczhou.cn:32080",
-		"Body":        "skdyhfiuwehif",
-		"Subject":     "测试支付系统-支付宝",
-		"OutTradeNo":  "1293798127398123",
-		"TotalAmount": "0.01",
-		"ProductCode": "FAST_INSTANT_TRADE_PAY",
-	}})
-	fmt.Println(result)
-	//APP 支付
-	//payResponse, err := c.TradeAppPay(context.Background(), &pb.AliPayRequest{Mid: "hsjkdhfksjdfsadf", Data: map[string]string{
+	//result, err := c.TradePagePay(context.Background(), &pb.AliPayRequest{Mid: "hdkjhsjkf", Data: map[string]string{
 	//	"NotifyURL":   "http://203.86.24.181:3000/alipay",
 	//	"ReturnURL":   "http://liveadmin.cczhou.cn:32080",
 	//	"Body":        "skdyhfiuwehif",
 	//	"Subject":     "测试支付系统-支付宝",
-	//	"OutTradeNo":  "sa1asd1asfasd",
-	//	"TotalAmount": "1.00",
-	//	"ProductCode": "sdofhuoidqwe",
+	//	"OutTradeNo":  "1293798127398123",
+	//	"TotalAmount": "0.01",
+	//	"ProductCode": "FAST_INSTANT_TRADE_PAY",
 	//}})
-	//fmt.Println(payResponse.Data["biz_content"])
+	//fmt.Println(result)
+	//APP 支付
+	payResponse, err := c.TradeAppPay(context.Background(), &pb.AliPayRequest{Mid: "hsjkdhfksjdfsadf", Data: map[string]string{
+		"NotifyURL":   "http://203.86.24.181:3000/alipay",
+		"ReturnURL":   "http://liveadmin.cczhou.cn:32080",
+		"Body":        "skdyhfiuwehif",
+		"Subject":     "测试支付系统-支付宝",
+		"OutTradeNo":  "sa1asd1asfasd",
+		"TotalAmount": "1.00",
+		"ProductCode": "sdofhuoidqwe",
+	}})
+	fmt.Println(payResponse.Data["timestamp"])
+	fmt.Println(payResponse.Data["biz_content"])
 	//response, err := c.TradeRefund(context.Background(), &pb.AliRefundRequest{OutTradeNo: "ueoiruwo7981789231", RefundAmount: "1000.00"})
 	//if err != nil {
 	//	fmt.Println("shdjkfsd", response)
