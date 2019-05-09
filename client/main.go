@@ -63,10 +63,11 @@ func main() {
 		"ReturnURL":   "http://liveadmin.cczhou.cn:32080",
 		"Body":        "skdyhfiuwehif",
 		"Subject":     "测试支付系统-支付宝",
-		"OutTradeNo":  "sa1asd1asfasd",
+		"OutTradeNo":  "5ccfe0bcf9f8a88e4e943b29",
 		"TotalAmount": "1.00",
-		"ProductCode": "sdofhuoidqwe",
+		"ProductCode": "QUICK_MSECURITY_PAY",
 	}})
+	fmt.Println(payResponse)
 	fmt.Println(payResponse.Data["timestamp"])
 	fmt.Println(payResponse.Data["biz_content"])
 	//response, err := c.TradeRefund(context.Background(), &pb.AliRefundRequest{OutTradeNo: "ueoiruwo7981789231", RefundAmount: "1000.00"})
