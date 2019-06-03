@@ -4,6 +4,7 @@ import (
 	pb "XcessAlipay/proto"
 	"context"
 	"fmt"
+
 	"google.golang.org/grpc"
 )
 
@@ -58,36 +59,36 @@ func main() {
 	//}})
 	//fmt.Println(result)
 	//APP 支付
-	payResponse, err := c.TradeAppPay(context.Background(), &pb.AliPayRequest{Mid: "hsjkdhfksjdfsadf", Data: map[string]string{
-		"NotifyURL":   "http://203.86.24.181:3000/alipay",
-		"ReturnURL":   "http://liveadmin.cczhou.cn:32080",
-		"Body":        "skdyhfiuwehif",
-		"Subject":     "测试支付系统-支付宝",
-		"OutTradeNo":  "5ccfe0bcf9f8a88e4e943b29",
-		"TotalAmount": "1.00",
-		"ProductCode": "QUICK_MSECURITY_PAY",
-	}})
-	fmt.Println(payResponse)
-	fmt.Println(payResponse.Data["timestamp"])
-	fmt.Println(payResponse.Data["biz_content"])
-	//response, err := c.TradeRefund(context.Background(), &pb.AliRefundRequest{OutTradeNo: "ueoiruwo7981789231", RefundAmount: "1000.00"})
-	//if err != nil {
-	//	fmt.Println("shdjkfsd", response)
-	//}
-	//fmt.Println(response)
-	//result, err := c.TradeApp(context.Background(), &pb.AliRequest{Name: "shdjkfsd"})
+	// payResponse, err := c.TradeAppPay(context.Background(), &pb.AliPayRequest{Mid: "hsjkdhfksjdfsadf", Data: map[string]string{
+	// 	"NotifyURL":   "http://203.86.24.181:3000/alipay",
+	// 	"ReturnURL":   "http://liveadmin.cczhou.cn:32080",
+	// 	"Body":        "skdyhfiuwehif",
+	// 	"Subject":     "测试支付系统-支付宝",
+	// 	"OutTradeNo":  "5ccfe0bcf9f8a88e4e943b29",
+	// 	"TotalAmount": "1.00",
+	// 	"ProductCode": "QUICK_MSECURITY_PAY",
+	// }})
+	// fmt.Println(payResponse)
+	// fmt.Println(payResponse.Data["timestamp"])
+	// fmt.Println(payResponse.Data["biz_content"])
+	// //response, err := c.TradeRefund(context.Background(), &pb.AliRefundRequest{OutTradeNo: "ueoiruwo7981789231", RefundAmount: "1000.00"})
+	// //if err != nil {
+	// //	fmt.Println("shdjkfsd", response)
+	// //}
+	// //fmt.Println(response)
+	// //result, err := c.TradeApp(context.Background(), &pb.AliRequest{Name: "shdjkfsd"})
+	// if err != nil {
+	// 	fmt.Println(err.Error())
+	// 	fmt.Println("请求失败!!!")
+	// 	return
+	// }
+
+	refoundResponse, err := c.FundTransToAccountTransfer(context.Background(), &pb.AliPayRequest{Data: map[string]string{"OutBizNo": "shgfhdksfasd", "PayeeAccount": "18856988766", "Amount": "0.1"}})
 	if err != nil {
 		fmt.Println(err.Error())
-		fmt.Println("请求失败!!!")
-		return
+	} else {
+		fmt.Println(refoundResponse)
 	}
-
-	//refoundResponse, err := c.FundTransToAccountTransfer(context.Background(), &pb.AliPayRequest{Data: map[string]string{"OutBizNo": "shgfhdksfasd", "PayeeAccount": "lsvhnj7045@sandbox.com", "Amount": "1.00"}})
-	//if err != nil {
-	//	fmt.Println(err.Error())
-	//} else {
-	//	fmt.Println(refoundResponse)
-	//}
 	// 获取服务端返回的结果
 	//fmt.Println(result.Data["sign"])
 	//fmt.Println(result.Data["method"])
