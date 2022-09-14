@@ -4,12 +4,12 @@ import (
 	"XcessAlipay/Config"
 	"XcessAlipay/proto"
 	"context"
-	"github.com/smartwalle/alipay"
+	"github.com/smartwalle/alipay/v3"
 )
 
 func (s *Myserver) TradePagePay(c context.Context, in *service.AliPayRequest) (result *service.AliPageResponse, err error) {
 	result = &service.AliPageResponse{}
-	var p = alipay.AliPayTradePagePay{}
+	var p = alipay.TradePagePay{}
 	p.NotifyURL = in.Data["NotifyURL"]
 	p.ReturnURL = in.Data["ReturnURL"]
 	p.Body = in.Data["Body"]

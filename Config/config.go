@@ -2,24 +2,36 @@ package Config
 
 import (
 	"fmt"
-	"github.com/smartwalle/alipay"
-	yaml "gopkg.in/yaml.v2"
+	"github.com/smartwalle/alipay/v3"
+	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
+	"os"
+	"time"
 )
 
-const (
-	CONFPATH string = "/etc/xcesspay/conf.yaml" // 配置文件地址
-	//CONFPATH string = "/septnet/config/conf.yaml" // 配置文件地址
-	CONFKEY string = "Config" //配置文件的key
+var (
+	ServerConf                 *Yaml
+	BaseYamlPath               string
+	IrisPath                   string
+	CertPath                   string
+	VerificationRedisKeyPrefix string
+	LocationZone               *time.Location
+	Client                     *alipay.Client
 )
-
-var ServerConf *Yaml
-var Client *alipay.AliPay
 
 func init() {
+	LocationZone, _ = time.LoadLocation("Asia/Shanghai")
 
-	yamlFile, err := ioutil.ReadFile(CONFPATH)
+	if os.Getenv("Env") == "Develop" {
+		BaseYamlPath = "/Users/Vincent/workspace/go/src/XcessAlipay/DockerBuild/configuration/confdev.yaml"
+		CertPath = "/Users/Vincent/workspace/go/src/XcessAlipay/DockerBuild/alipaycert/"
+	} else {
+		BaseYamlPath = "/etc/xcessalipay/conf.yaml"
+		IrisPath = "/etc/xcessalipay/iris.yaml"
+		CertPath = "/etc/alipaycert/"
+	}
+	yamlFile, err := ioutil.ReadFile(BaseYamlPath)
 	if err != nil {
 		log.Fatal(err)
 	} else {
@@ -28,10 +40,10 @@ func init() {
 			log.Fatal(err)
 		}
 	}
-	Client = alipay.New(ServerConf.AliPayConf.APPID, ServerConf.AliPayConf.ALIPUBLICKEY, ServerConf.AliPayConf.PRIVATEKEY, ServerConf.AliPayConf.IsPruduction)
-	//router.Use(ServerConf.ReadConfig)
-}
-
-func (this *MongoDB) String() string {
-	return fmt.Sprintf("mongodb://%v:%v@%v:%v/%v", this.User, this.Password, this.Host, this.Port, this.AuthDBName)
+	fmt.Println("ServerConf.AliPayConf.AppID",ServerConf.AliPayConf.AppID)
+	fmt.Println("ServerConf.AliPayConf.PrivateKey",ServerConf.AliPayConf.PrivateKey)
+	Client, err = alipay.New(ServerConf.AliPayConf.AppID, ServerConf.AliPayConf.PrivateKey, ServerConf.AliPayConf.IsProduction)
+	Client.LoadAppPublicCertFromFile(CertPath+"appCertPublicKey_2019050664411025.crt") // 加载应用公钥证书
+	Client.LoadAliPayRootCertFromFile(CertPath+"alipayRootCert.crt")                    // 加载支付宝根证书
+	Client.LoadAliPayPublicCertFromFile(CertPath+"alipayCertPublicKey_RSA2.crt")        // 加载支付宝公钥证书
 }

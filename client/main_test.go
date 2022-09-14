@@ -4,6 +4,7 @@ import (
 	pb "XcessAlipay/proto"
 	"context"
 	"fmt"
+	"testing"
 
 	"google.golang.org/grpc"
 )
@@ -32,7 +33,7 @@ type result struct {
 	AppId string `json:"app_id"`
 }
 
-func main() {
+func TestAmain(t *testing.T) {
 
 	// 创建一个grpc连接器
 	conn, err := grpc.Dial(address, grpc.WithInsecure())
@@ -82,12 +83,11 @@ func main() {
 	// 	fmt.Println("请求失败!!!")
 	// 	return
 	// }
-
-	refoundResponse, err := c.FundTransToAccountTransfer(context.Background(), &pb.AliPayRequest{Data: map[string]string{"OutBizNo": "shgfhdksfasd", "PayeeAccount": "18856988766", "Amount": "0.1"}})
+	refoundResponse, err := c.FundTransToAccountTransfer(context.Background(), &pb.AliPayRequest{Data: map[string]string{"OutBizNo": "1asdjlaksdlkjfas123da", "PayeeAccount": "18856988766", "Amount": "0.1"}})
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println("err",err.Error())
 	} else {
-		fmt.Println(refoundResponse)
+		fmt.Println(refoundResponse.SubMsg)
 	}
 	// 获取服务端返回的结果
 	//fmt.Println(result.Data["sign"])

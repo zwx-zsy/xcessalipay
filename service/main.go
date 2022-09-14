@@ -3,6 +3,7 @@ package main
 // main.go
 
 import (
+	"XcessAlipay/Config"
 	"XcessAlipay/RPC"
 	service "XcessAlipay/proto"
 	"log"
@@ -14,7 +15,7 @@ import (
 
 func main() {
 	// lis, err := net.Listen("tcp", ":"+Config.ServerConf.Server.Port)
-	lis, err := net.Listen("tcp", ":28888")
+	lis, err := net.Listen("tcp", ":"+Config.ServerConf.Server.Port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err.Error())
 	}

@@ -2,75 +2,60 @@ package Data
 
 import (
 	"XcessAlipay/Config"
-	"fmt"
 	"gopkg.in/mgo.v2"
-	"gopkg.in/yaml.v2"
-	"io/ioutil"
-	"log"
+"log"
+"time"
 )
 
+var (
+	session *mgo.Session
+)
 
-var DB *mgo.Database
+func init() {
+	dialInfo := &mgo.DialInfo{
+		Addrs:          Config.ServerConf.DBConf.Address,
+		Direct:         false,
+		Timeout:        time.Second * 60,
+		FailFast:       false,
+		Database:       Config.ServerConf.DBConf.AuthDBName,
+		ReplicaSetName: Config.ServerConf.DBConf.ReplicaSetName,
+		Source:         "admin",
+		Service:        "",
+		ServiceHost:    "",
+		Mechanism:      "",
+		Username:       Config.ServerConf.DBConf.User,
+		Password:       Config.ServerConf.DBConf.Password,
+		PoolLimit:      4096,
+		DialServer:     nil,
+		Dial:           nil,
+	}
 
-type Middleware struct {
+	sess, err := mgo.DialWithInfo(dialInfo)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+	session = sess
+	session.SetMode(mgo.Monotonic, true)
+}
+
+type SessionStore struct {
 	session *mgo.Session
 }
 
-func NewMiddleware(session *mgo.Session) *Middleware {
-	return &Middleware{
-		session: session,
+func NewSessionStore() *SessionStore {
+	return &SessionStore{
+		session: session.Copy(),
 	}
 }
 
-func (m *Middleware) Connect() *mgo.Session {
-	s := m.session.Clone()
-	DB = s.DB(Config.ServerConf.DBConf.DatabaseName)
-	//defer s.Close()
-	//c.Next()
-	return s
+func (s *SessionStore) C(name string) *mgo.Collection {
+	return s.session.DB(Config.ServerConf.DBConf.DatabaseName).C(name)
 }
 
-//func Dial(router *gin.Engine) {
-//	Session, err := mgo.Dial(Config.MongoDB{}.String())
-//	if err != nil {
-//		log.Fatal(err)
-//	}
-//	Session.SetMode(mgo.Eventual, true)
-//	if err != nil {
-//		log.Fatal(err)
-//	}
-//	// middleware
-//	middleware := NewMiddleware(Session)
-//	router.Use(middleware.Connect)
-//
-//}
-
-
-
-func init() {
-
-	yamlFile, err := ioutil.ReadFile(Config.CONFPATH)
-	if err != nil {
-		log.Fatal(err)
-	} else {
-		err = yaml.Unmarshal(yamlFile, &Config.ServerConf)
-		if err != nil {
-			log.Fatal(err)
-		}
-	}
+func (s *SessionStore) Close() {
+	s.session.Close()
 }
 
-func init() {
-	Session, err := mgo.Dial(Config.ServerConf.DBConf.String())
-	fmt.Println(Session)
-	if err != nil {
-		log.Fatal(err)
-	}
-	Session.SetMode(mgo.Eventual, true)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	middleware := NewMiddleware(Session)
-	middleware.Connect()
+func GetErrNotFound() error {
+	return mgo.ErrNotFound
 }

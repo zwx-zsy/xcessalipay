@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/smartwalle/alipay"
+	"github.com/smartwalle/alipay/v3"
 )
 
 type Myserver struct {
@@ -23,15 +23,16 @@ type Result struct {
 
 func (s *Myserver) TradeAppPay(ctx context.Context, in *service.AliPayRequest) (resp *service.AliPayResponse, err error) {
 	resp = &service.AliPayResponse{}
-	var p = alipay.AliPayTradeAppPay{}
+	var p = alipay.TradeAppPay{}
 	p.NotifyURL = in.Data["NotifyURL"]
 	p.Body = in.Data["Body"]
 	p.Subject = in.Data["Subject"]
 	p.OutTradeNo = in.Data["OutTradeNo"]
 	p.TotalAmount = in.Data["TotalAmount"]
 	p.ProductCode = in.Data["ProductCode"]
-	param, err := Config.Client.TradeAppPay(p)
-	res := param.(url.Values)
+	Param, err := Config.Client.TradeAppPay(p)
+	res, err := url.ParseQuery(Param)
+	//res := Param.(url.Values)
 	resp.Codes = http.StatusOK
 	resp.Message = http.StatusText(http.StatusOK)
 	resp.Data = map[string]string{}
