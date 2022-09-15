@@ -24,8 +24,8 @@ func init() {
 	LocationZone, _ = time.LoadLocation("Asia/Shanghai")
 
 	if os.Getenv("Env") == "Develop" {
-		BaseYamlPath = "/Users/Vincent/workspace/go/src/XcessAlipay/DockerBuild/configuration/confdev.yaml"
-		CertPath = "/Users/Vincent/workspace/go/src/XcessAlipay/DockerBuild/alipaycert/"
+		BaseYamlPath = "./DockerBuild/configuration/confdev.yaml"
+		CertPath = "./DockerBuild/alipaycert/"
 	} else {
 		BaseYamlPath = "/etc/xcessalipay/conf.yaml"
 		IrisPath = "/etc/xcessalipay/iris.yaml"
@@ -40,10 +40,10 @@ func init() {
 			log.Fatal(err)
 		}
 	}
-	fmt.Println("ServerConf.AliPayConf.AppID",ServerConf.AliPayConf.AppID)
-	fmt.Println("ServerConf.AliPayConf.PrivateKey",ServerConf.AliPayConf.PrivateKey)
+	fmt.Println("ServerConf.AliPayConf.AppID", ServerConf.AliPayConf.AppID)
+	fmt.Println("ServerConf.AliPayConf.PrivateKey", ServerConf.AliPayConf.PrivateKey)
 	Client, err = alipay.New(ServerConf.AliPayConf.AppID, ServerConf.AliPayConf.PrivateKey, ServerConf.AliPayConf.IsProduction)
-	Client.LoadAppPublicCertFromFile(CertPath+"appCertPublicKey_2019050664411025.crt") // 加载应用公钥证书
-	Client.LoadAliPayRootCertFromFile(CertPath+"alipayRootCert.crt")                    // 加载支付宝根证书
-	Client.LoadAliPayPublicCertFromFile(CertPath+"alipayCertPublicKey_RSA2.crt")        // 加载支付宝公钥证书
+	Client.LoadAppPublicCertFromFile(CertPath + "appCertPublicKey_2019050664411025.crt") // 加载应用公钥证书
+	Client.LoadAliPayRootCertFromFile(CertPath + "alipayRootCert.crt")                   // 加载支付宝根证书
+	Client.LoadAliPayPublicCertFromFile(CertPath + "alipayCertPublicKey_RSA2.crt")       // 加载支付宝公钥证书
 }

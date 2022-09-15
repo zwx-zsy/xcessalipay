@@ -1,12 +1,12 @@
 package RPC
 
 import (
-	"XcessAlipay/Config"
-	"XcessAlipay/proto"
 	"context"
 	"encoding/json"
 	"fmt"
 	"github.com/smartwalle/alipay/v3"
+	"github.com/yancyzhou/xcessalipay/Config"
+	"github.com/yancyzhou/xcessalipay/proto"
 )
 
 func (s *Myserver) TradeRefund(ctx context.Context, in *service.AliRefundRequest) (resp *service.AliRefoundResponse, err error) {
@@ -40,7 +40,7 @@ func (s *Myserver) FundTransToAccountTransfer(ctx context.Context, in *service.A
 	p.OutBizNo = in.Data["OutBizNo"]
 	p.ProductCode = "TRANS_ACCOUNT_NO_PWD"
 	p.PayeeInfo = PayeeInfoOne
-	p.TransAmount = in.Data["Amount"]             //转账金额
+	p.TransAmount = in.Data["Amount"] //转账金额
 	rsp, err := Config.Client.FundTransUniTransfer(p)
 	if err != nil {
 		fmt.Println(err.Error())

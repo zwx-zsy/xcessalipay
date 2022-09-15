@@ -1,10 +1,10 @@
 package Data
 
 import (
-	"XcessAlipay/Config"
+	"github.com/yancyzhou/xcessalipay/Config"
 	"gopkg.in/mgo.v2"
-"log"
-"time"
+	"log"
+	"time"
 )
 
 var (

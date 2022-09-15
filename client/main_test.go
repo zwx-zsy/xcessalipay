@@ -1,9 +1,9 @@
 package main
 
 import (
-	pb "XcessAlipay/proto"
 	"context"
 	"fmt"
+	pb "github.com/yancyzhou/xcessalipay/proto"
 	"testing"
 
 	"google.golang.org/grpc"
@@ -85,7 +85,7 @@ func TestAmain(t *testing.T) {
 	// }
 	refoundResponse, err := c.FundTransToAccountTransfer(context.Background(), &pb.AliPayRequest{Data: map[string]string{"OutBizNo": "1asdjlaksdlkjfas123da", "PayeeAccount": "18856988766", "Amount": "0.1"}})
 	if err != nil {
-		fmt.Println("err",err.Error())
+		fmt.Println("err", err.Error())
 	} else {
 		fmt.Println(refoundResponse.SubMsg)
 	}

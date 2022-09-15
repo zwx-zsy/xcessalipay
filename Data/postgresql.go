@@ -1,9 +1,9 @@
 package Data
 
 import (
-	"XcessAlipay/Config"
 	"fmt"
 	"github.com/golang/glog"
+	. "github.com/yancyzhou/xcessalipay/Config"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

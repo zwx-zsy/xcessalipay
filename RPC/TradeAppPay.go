@@ -1,10 +1,9 @@
 package RPC
 
 import (
-	"XcessAlipay/Config"
-	service "XcessAlipay/proto"
 	"context"
-	"fmt"
+	"github.com/yancyzhou/xcessalipay/Config"
+	service "github.com/yancyzhou/xcessalipay/proto"
 	"net/http"
 	"net/url"
 
@@ -41,6 +40,5 @@ func (s *Myserver) TradeAppPay(ctx context.Context, in *service.AliPayRequest) (
 	resp.Data["timestamp"] = res.Get("timestamp")
 	resp.Data["biz_content"] = res.Get("biz_content")
 	resp.Data["sign"] = res.Get("sign")
-	fmt.Println(resp.Data)
 	return resp, nil
 }

@@ -3,9 +3,9 @@ package main
 // main.go
 
 import (
-	"XcessAlipay/Config"
-	"XcessAlipay/RPC"
-	service "XcessAlipay/proto"
+	"github.com/yancyzhou/xcessalipay/Config"
+	"github.com/yancyzhou/xcessalipay/RPC"
+	service "github.com/yancyzhou/xcessalipay/proto"
 	"log"
 	"net"
 

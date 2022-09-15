@@ -3,7 +3,6 @@ package Config
 //start
 type Yaml struct {
 	PGDBConf      PostgresqlDB `yaml:"PostgresqlDB"`
-	DBConf        MongoDB      `yaml:"Mongodb"`
 	Server        Server       `yaml:"Server"`
 	RedisConf     Redis        `yaml:"Redis"`
 	JwtConf       JwtConf      `yaml:"JwtConf"`

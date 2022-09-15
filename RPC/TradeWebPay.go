@@ -1,10 +1,10 @@
 package RPC
 
 import (
-	"XcessAlipay/Config"
-	"XcessAlipay/proto"
 	"context"
 	"github.com/smartwalle/alipay/v3"
+	"github.com/yancyzhou/xcessalipay/Config"
+	"github.com/yancyzhou/xcessalipay/proto"
 )
 
 func (s *Myserver) TradePagePay(c context.Context, in *service.AliPayRequest) (result *service.AliPageResponse, err error) {

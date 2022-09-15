@@ -4,35 +4,27 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfc385-e855-4da6-8e2d-eee2c298f718" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DockerBuild/alipaycert/alipayCertPublicKey_RSA2.crt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DockerBuild/alipaycert/alipayRootCert.crt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DockerBuild/alipaycert/appCertPublicKey_2019050664411025.crt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/XcessAlipay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/XcessAlipay.iml" afterDir="false" />
+    <list default="true" id="3bbfc385-e855-4da6-8e2d-eee2c298f718" name="Default Changelist" comment="build 1.1.27">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/alipay.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/Config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/type.go" beforeDir="false" afterPath="$PROJECT_DIR$/Config/type.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/Data/User.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/db_test.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/mongo.go" beforeDir="false" afterPath="$PROJECT_DIR$/Data/mongo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/type.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/postgresql.go" beforeDir="false" afterPath="$PROJECT_DIR$/Data/postgresql.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPC/TradeAppPay.go" beforeDir="false" afterPath="$PROJECT_DIR$/RPC/TradeAppPay.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPC/TradeRefund.go" beforeDir="false" afterPath="$PROJECT_DIR$/RPC/TradeRefund.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPC/TradeWapPay.go" beforeDir="false" afterPath="$PROJECT_DIR$/RPC/TradeWapPay.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RPC/TradeWebPay.go" beforeDir="false" afterPath="$PROJECT_DIR$/RPC/TradeWebPay.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/conf.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/connect_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/connect_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/main_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="XcessAlipay" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,36 +53,35 @@
       <GitPushTagMode />
     </option>
   </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="qis8huxf" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1S3Cubq3DbolRc4xIrPzM5yMe1D" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultGoTemplateProperty" value="Go File" />
-    <property name="GO_FMT" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="configurable..is.expanded" value="false" />
-    <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
-    <property name="go.formatter.settings.were.checked" value="true" />
-    <property name="go.gopath.indexing.explicitly.defined" value="true" />
-    <property name="go.import.settings.migrated" value="true" />
-    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DockerBuild/alipaycert" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;ff26cb&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Vincent/workspace/XcessAlipay&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/DockerBuild/alipaycert" />
@@ -99,16 +90,7 @@
       <recent name="$PROJECT_DIR$/Config" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestAliPay_TradeRefund in XcessAlipay/service">
-    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="XcessAlipay" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <package value="XcessAlipay" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/client/main.go" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Shell Script.build.sh">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="XcessAlipay" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -169,31 +151,46 @@
       <pattern value="^\QTestAmain\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestDb in XcessAlipay/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="main_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="XcessAlipay" />
-      <working_directory value="$PROJECT_DIR$/service" />
-      <kind value="PACKAGE" />
-      <package value="XcessAlipay/service" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
+      <working_directory value="$PROJECT_DIR$/client" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="github.com/yancyzhou/xcessalipay" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/client/main_test.go" />
       <framework value="gotest" />
-      <pattern value="^TestDb$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="build.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/DockerBuild/build.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/DockerBuild" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build main.go (1)" />
       <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Test.main_test.go" />
       <item itemvalue="Go Test.TestAliPay_TradeRefund in XcessAlipay/service" />
-      <item itemvalue="Go Test.TestDb in XcessAlipay/service" />
       <item itemvalue="Go Test.TestAmain in XcessAlipay/client" />
+      <item itemvalue="Shell Script.build.sh" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Shell Script.build.sh" />
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Test.main_test.go" />
         <item itemvalue="Go Test.TestAliPay_TradeRefund in XcessAlipay/service" />
         <item itemvalue="Go Test.TestAmain in XcessAlipay/client" />
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Test.TestAliPay_TradeRefund in XcessAlipay/service" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +240,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="formart proto" />
@@ -257,6 +253,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="build 1.1.27" />
   </component>
   <component name="VgoProject">
-    <integration-enabled>true</integration-enabled>
+    <settings-migrated>true</settings-migrated>
   </component>
 </project>
